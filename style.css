@@ -1,0 +1,228 @@
+/* =========================================================
+   Socle commun — toutes les couleurs vivent dans :root
+   ========================================================= */
+:root {
+  --vert: #1a7a4c;
+  --rouge: #c0392b;
+  --texte: #1c2430;
+  --texte-clair: #5a6575;
+  --fond: #f0f4f2;
+  --carte: #ffffff;
+  --rayon: 0.75rem;
+  --espace: 1rem;
+
+  /* Couleurs dédiées FizzBuzz (jamais de code hex ailleurs) */
+  --couleur-fizz: var(--vert);
+  --couleur-buzz: var(--rouge);
+  --couleur-fizzbuzz: #0d4f8b;
+  --couleur-case: #e2e8e6;
+  /* Ombres dérivées de --texte (pas de RGB dupliqué en dur) */
+  --ombre: color-mix(in srgb, var(--texte) 12%, transparent);
+  --ombre-forte: color-mix(in srgb, var(--texte) 22%, transparent);
+  --nav-fond: #d8e6df;
+  --lien: var(--vert);
+  --bordure: #c5d4cc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--texte);
+  background-color: var(--fond);
+}
+
+/* ---------- En-tête ---------- */
+.entete {
+  padding: calc(var(--espace) * 2) var(--espace);
+  background: linear-gradient(145deg, var(--nav-fond), var(--fond));
+  border-bottom: 2px solid var(--bordure);
+  text-align: center;
+}
+
+.entete h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--texte);
+}
+
+.sous-titre {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: 1rem;
+  color: var(--texte-clair);
+}
+
+/* ---------- Navigation ---------- */
+.nav-interne {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espace);
+  padding: var(--espace);
+  background-color: var(--nav-fond);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.nav-interne a {
+  color: var(--lien);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--rayon);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-interne a:hover,
+.nav-interne a:focus-visible {
+  background-color: var(--carte);
+  color: var(--texte);
+  outline: none;
+}
+
+/* ---------- Contenu principal ---------- */
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: calc(var(--espace) * 1.5) var(--espace);
+}
+
+section {
+  margin-bottom: calc(var(--espace) * 2.5);
+}
+
+section h2 {
+  margin: 0 0 var(--espace);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  color: var(--texte);
+  border-bottom: 2px solid var(--bordure);
+  padding-bottom: 0.4rem;
+}
+
+/* ---------- Carte de base ---------- */
+.carte {
+  background-color: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: var(--espace);
+  box-shadow: 0 2px 6px var(--ombre);
+}
+
+/* ---------- Grille FizzBuzz ---------- */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.5rem;
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--couleur-case);
+  color: var(--texte);
+  border-radius: calc(var(--rayon) * 0.5);
+  box-shadow: 0 1px 3px var(--ombre);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px var(--ombre-forte);
+  z-index: 1;
+}
+
+/* Classes Fizz / Buzz / FizzBuzz — couleurs via variables uniquement */
+.fizz {
+  background-color: var(--couleur-fizz);
+  color: var(--carte);
+}
+
+.buzz {
+  background-color: var(--couleur-buzz);
+  color: var(--carte);
+}
+
+.fizzbuzz {
+  background-color: var(--couleur-fizzbuzz);
+  color: var(--carte);
+}
+
+/* ---------- Tables de multiplication ---------- */
+.conteneur-cartes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace);
+}
+
+.carte-table {
+  background-color: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: var(--espace);
+  box-shadow: 0 2px 6px var(--ombre);
+  flex: 1 1 12rem;
+  max-width: 100%;
+}
+
+.carte-table h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: var(--vert);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: 0.4rem;
+}
+
+.carte-table ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--texte);
+  font-size: 0.95rem;
+}
+
+.carte-table li {
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Pied de page ---------- */
+.pied {
+  padding: calc(var(--espace) * 1.5) var(--espace);
+  text-align: center;
+  background-color: var(--nav-fond);
+  border-top: 1px solid var(--bordure);
+  color: var(--texte-clair);
+  font-size: 0.9rem;
+}
+
+.pied p {
+  margin: 0;
+}
+
+/* ---------- Mobile : grille 5 colonnes ---------- */
+@media (max-width: 600px) {
+  .grille {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .case {
+    font-size: 0.7rem;
+    min-height: 2.2rem;
+  }
+}
