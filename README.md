@@ -1,6 +1,6 @@
 # FizzBuzz & Tables de multiplication
 
-Mini-site pédagogique (Akieni Academy) pour pratiquer les **boucles**, l’opérateur **modulo**, les **conditions imbriquées** et l’affichage dynamique en **HTML5 / CSS3 / JavaScript ES6+ natifs** — sans framework, sans librairie, sans bundler.
+Mini-site pédagogique (Akieni Academy) pour pratiquer les **boucles**, l’opérateur **modulo**, les **conditions imbriquées** et l’affichage dynamique en **HTML5 / CSS3 / JavaScript ES6+ natifs** sans framework, sans librairie, sans bundler.
 
 ## Contenu du projet
 
