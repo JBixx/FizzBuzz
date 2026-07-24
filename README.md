@@ -39,19 +39,13 @@ Aucun serveur backend n’est requis : tout tourne côté navigateur.
 
 ## Captures d’écran
 
-À compléter après test dans les DevTools (mode responsive) :
-
 ### Mobile — 375px de large
 
-![Capture mobile 375px](captures/mobile-375.png)
-
-> *Insérer ici une capture de la page à 375px (grille FizzBuzz en 5 colonnes + cartes empilées).*
+<img width="900" height="440" alt="image" src="https://github.com/user-attachments/assets/d67209b9-4b45-4b82-aed0-dc2d3f5e2b88" />
 
 ### Desktop — largeur confortable (≥ 1024px)
 
-![Capture desktop](captures/desktop.png)
-
-> *Insérer ici une capture desktop (grille 10 colonnes + cartes en flex-wrap).*
+<img width="941" height="422" alt="image" src="https://github.com/user-attachments/assets/29368780-3957-4859-b478-66f6ceedb3dc" />
 
 ## Points techniques à retenir
 
